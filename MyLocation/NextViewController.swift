@@ -29,6 +29,8 @@ class NextViewController: UIViewController {
         let location = noti.object as! CLLocation
         print(location)
         
+        
+        
     }
     
     func loveyou(hander: Hander) {
