@@ -21,11 +21,11 @@ class NextViewController: UIViewController {
             
         })
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(NextViewController.locationChanged(_:)), name: "didUpdateLocations", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(NextViewController.locationChanged(_:)), name: NSNotification.Name(rawValue: "didUpdateLocations"), object: nil)
         // Do any additional setup after loading the view.
     }
     
-    func locationChanged(noti: NSNotification)  {
+    func locationChanged(_ noti: Notification)  {
         let location = noti.object as! CLLocation
         print(location)
         
@@ -33,13 +33,13 @@ class NextViewController: UIViewController {
         
     }
     
-    func loveyou(hander: Hander) {
+    func loveyou(_ hander: Hander) {
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {

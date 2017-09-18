@@ -8,6 +8,30 @@
 
 import UIKit
 import CoreLocation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class ViewController: UIViewController,CLLocationManagerDelegate {
     var locationManger: CLLocationManager!
@@ -31,7 +55,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations.last! as CLLocation
         self.location = location
         print("latt 经度 = \(location.coordinate.latitude)")
@@ -45,26 +69,26 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         
     }
     
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         
     }
     
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
-        case .AuthorizedAlways:
+        case .authorizedAlways:
             print("已经授权")
-        case .AuthorizedWhenInUse:
+        case .authorizedWhenInUse:
             print("使用中打开")
-        case .Restricted:
+        case .restricted:
             print("使用受限")
-        case .Denied:
+        case .denied:
             print("已经拒绝")
-        case .NotDetermined:
+        case .notDetermined:
             print("不能确定")
        }
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let geo = CLGeocoder()
         if let loc = self.location {
             geo.reverseGeocodeLocation(loc) { (placeMark:[CLPlacemark]?, error:NSError?) in
@@ -77,14 +101,14 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
                         print(mark?.name)
                     }
                 }
-            }
+            } as! CLGeocodeCompletionHandler as! CLGeocodeCompletionHandler as! CLGeocodeCompletionHandler as! CLGeocodeCompletionHandler as! CLGeocodeCompletionHandler as! CLGeocodeCompletionHandler as! CLGeocodeCompletionHandler
         }else{
             print("没有location")
         }
         
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
 //        self.locationManger.stopUpdatingLocation()
     }
