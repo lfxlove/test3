@@ -15,6 +15,7 @@
 		131152921D7FF7C000586196 /* MyLocationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131152911D7FF7C000586196 /* MyLocationTests.swift */; };
 		1311529D1D7FF7C000586196 /* MyLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1311529C1D7FF7C000586196 /* MyLocationUITests.swift */; };
 		131152AD1D8002C300586196 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131152AC1D8002C300586196 /* NextViewController.swift */; };
+		8801614C1F6FDCD1005F8845 /* lfx01.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8801614B1F6FDCD1005F8845 /* lfx01.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		1311529C1D7FF7C000586196 /* MyLocationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationUITests.swift; sourceTree = "<group>"; };
 		1311529E1D7FF7C000586196 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		131152AC1D8002C300586196 /* NextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		8801614B1F6FDCD1005F8845 /* lfx01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lfx01.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				131152831D7FF7C000586196 /* Assets.xcassets */,
 				131152851D7FF7C000586196 /* LaunchScreen.storyboard */,
 				131152881D7FF7C000586196 /* Info.plist */,
+				8801614B1F6FDCD1005F8845 /* lfx01.swift */,
 			);
 			path = MyLocation;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1311527F1D7FF7C000586196 /* ViewController.swift in Sources */,
+				8801614C1F6FDCD1005F8845 /* lfx01.swift in Sources */,
 				131152AD1D8002C300586196 /* NextViewController.swift in Sources */,
 				1311527D1D7FF7C000586196 /* AppDelegate.swift in Sources */,
 			);
